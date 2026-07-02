@@ -1,0 +1,112 @@
+/* NodeStatus.css */
+/* Styles for NodeStatus component */
+
+.dustbin-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+}
+
+.dustbin-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.dustbin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dustbin-id {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dustbin-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.5rem;
+  background: var(--primary-ultralight);
+  border-radius: var(--radius-sm);
+}
+
+.dustbin-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+}
+
+.dustbin-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.status-badge.available {
+  background: var(--success-light);
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.status-badge.occupied {
+  background: var(--warning-light);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.status-badge.maintenance {
+  background: var(--error-light);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.dustbin-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dustbin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.info-label {
+  color: var(--text-tertiary);
+}
+
+.info-value {
+  color: var(--text-secondary);
+  font-weight: 500;
+}

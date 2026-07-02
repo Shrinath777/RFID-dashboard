@@ -1,0 +1,48 @@
+/* ConnectionTest.css */
+/* Styles for ConnectionTest component */
+
+/* Basic styles for the connection test component */
+.connection-test-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.connection-test-container h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.connection-test-container h4 {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.connection-test-container pre {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-size: 0.875rem;
+}
+
+.connection-test-container button {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connection-test-container button:hover {
+  background: var(--primary-dark);
+}

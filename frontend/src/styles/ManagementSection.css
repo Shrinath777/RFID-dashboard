@@ -1,0 +1,53 @@
+/* ManagementSection.css */
+/* Styles for ManagementSection component */
+
+.management-section-enhanced {
+  position: relative;
+}
+
+/* Ensure only one main header is prominent */
+.stats-summary-enhanced {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hide any duplicate management-stats-grid if it exists */
+.management-stats-grid {
+  display: none !important;
+}
+
+/* Fix for any duplicate section headers */
+.section-header-enhanced + .stats-summary-enhanced,
+.stats-summary-enhanced + .section-header-enhanced {
+  display: none;
+}
+
+/* Ensure only one title is visible */
+.stats-summary-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stats-summary-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.stats-summary-badge {
+  background: var(--primary-ultralight);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

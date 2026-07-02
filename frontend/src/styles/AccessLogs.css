@@ -1,0 +1,79 @@
+/* AccessLogs.css */
+/* Styles for AccessLogs component */
+
+.access-logs-section {
+  animation: fadeInUp 0.5s ease;
+}
+
+.log-row:hover {
+  background: var(--background);
+}
+
+.timestamp {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+.log-notes {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-success {
+  background: var(--success-ultralight);
+  color: var(--success);
+}
+
+.status-info {
+  background: var(--info-ultralight);
+  color: var(--info);
+}
+
+.status-error {
+  background: var(--error-ultralight);
+  color: var(--error);
+}
+
+.status-warning {
+  background: var(--warning-ultralight);
+  color: var(--warning);
+}
+
+.results-summary {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-light);
+  background: var(--background);
+}
+
+/* Status badge variations used in AccessLogs */
+.status-badge-table.success {
+  background: var(--success-ultralight);
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.status-badge-table.info {
+  background: var(--info-ultralight);
+  color: var(--info);
+  border-color: var(--info);
+}
+
+.status-badge-table.error {
+  background: var(--error-ultralight);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.status-badge-table.warning {
+  background: var(--warning-ultralight);
+  color: var(--warning);
+  border-color: var(--warning);
+}

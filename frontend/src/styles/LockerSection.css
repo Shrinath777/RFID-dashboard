@@ -1,0 +1,74 @@
+/* LockersSection.css */
+/* Styles for LockersSection component */
+
+.lockers-section-enhanced {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Status specific styles for lockers */
+.locker-card.available {
+  border-left: 4px solid var(--success);
+}
+
+.locker-card.occupied {
+  border-left: 4px solid var(--warning);
+}
+
+.locker-card.maintenance {
+  border-left: 4px solid var(--error);
+}
+
+/* Locker specific visual */
+.locker-visual {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Selected locker style */
+.node-card-enhanced.selected {
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-ultralight);
+}
+
+.quick-details-panel {
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border-light);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.details-content h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+}
+
+.detail-item span:first-child {
+  color: var(--text-tertiary);
+}
+
+.detail-item span:last-child {
+  color: var(--text-secondary);
+  font-weight: 500;
+}

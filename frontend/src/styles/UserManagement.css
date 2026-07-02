@@ -1,0 +1,441 @@
+/* UserManagement.css */
+/* Styles for UserManagement component */
+
+.user-management-section {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* ===== USER MANAGEMENT STYLES ===== */
+.user-identity-table {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar-small {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-ultralight);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-avatar-small .material-icons {
+  font-size: 1.125rem;
+  color: var(--primary);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.user-email {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.rfid-code {
+  background: var(--background);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.assigned-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nodes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.node-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--primary-ultralight);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.no-nodes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--error-ultralight);
+  color: var(--error);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.remove-node-btn {
+  background: none;
+  border: none;
+  color: var(--error);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.remove-node-btn:hover {
+  background: var(--error-ultralight);
+  transform: scale(1.1);
+}
+
+.node-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--primary-ultralight);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 2px;
+}
+
+/* Create User Button Styles */
+.header-create-action {
+  margin-top: 1.5rem;
+}
+
+.btn-create-user-large {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-create-user-large:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-create-user-large .btn-icon {
+  font-size: 1.25rem;
+}
+
+/* Make the modal more visible */
+.modal-overlay-enhanced {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content-enhanced {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-floating);
+  border: 1px solid var(--border-light);
+  animation: modalSlideIn 0.3s ease;
+}
+
+.create-user-form .form-content {
+  padding: 0;
+}
+
+.create-user-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.create-user-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.create-user-form .form-group input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.create-user-form .form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-ultralight);
+}
+
+.create-user-form .form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.create-user-form .form-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-user-form .form-actions button[type="button"] {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.create-user-form .form-actions button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.create-user-form .form-actions button.primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.create-user-form .form-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* User Management Header Layout */
+.section-header-enhanced .header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.header-left-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.section-icon {
+  font-size: 1.5rem;
+  width: 48px;
+  height: 40px;
+  background: var(--primary-ultralight);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ===== FIX USER MANAGEMENT ICON SIZE ===== */
+
+/* Method 1: Target User Management section specifically */
+.user-management-section .section-header-enhanced .header-text .section-icon {
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 1.5rem !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+}
+
+.user-management-section .section-header-enhanced .header-text .section-icon .material-icons {
+  font-size: 1.5rem !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  line-height: 1 !important;
+}
+
+/* Method 2: More specific targeting */
+div.section-header-enhanced .header-main .header-text .section-icon {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+div.section-header-enhanced .header-main .header-text .section-icon .material-icons {
+  font-size: 1.5rem !important;
+}
+
+/* Method 3: If the above doesn't work, use this nuclear option */
+[class*="user-management"] .section-icon,
+[class*="UserManagement"] .section-icon {
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 1.5rem !important;
+}
+
+[class*="user-management"] .section-icon .material-icons,
+[class*="UserManagement"] .section-icon .material-icons {
+  font-size: 1.5rem !important;
+}
+
+.header-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem; /* Decreased from 1rem */
+}
+
+.section-icon .material-icons {
+  font-size: 1.75rem; /* Decreased from 2.5rem */
+  color: var(--primary);
+}
+
+.section-icon .material-icons {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.header-text > div {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.header-create-action {
+  margin-top: 0.5rem;
+}
+
+.btn-create-user-large {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-create-user-large:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-create-user-large .btn-icon {
+  font-size: 1.25rem;
+}
+
+/* Stats on the right side */
+.header-stats-medium {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.stat-pill-medium {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  min-width: 150px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.stat-pill-medium:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-pill-medium .stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--primary-ultralight);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.stat-pill-medium .stat-icon .material-icons {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.stat-pill-medium .stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.stat-pill-medium .stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.stat-pill-medium .stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}

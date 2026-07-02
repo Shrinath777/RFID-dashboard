@@ -1,0 +1,719 @@
+/* NodeManagement.css */
+/* Styles for NodeManagement component */
+
+/* Node Management specific styles */
+.node-management-enhanced {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Management content spacing */
+.management-content {
+  margin-top: 2rem;
+}
+
+/* Button styles used in components */
+.btn-primary-small {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-primary-small:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== NODES GRID STYLES ===== */
+.nodes-grid-enhanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.node-card-enhanced {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.node-card-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.node-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.node-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.node-type-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.node-type-icon .material-icons {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.node-identity h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.node-type {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.status-visualization {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.dustbin-visual,
+.locker-visual {
+  font-size: 4rem;
+  opacity: 0.8;
+}
+
+.status-indicator-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: var(--success-ultralight);
+  color: var(--success);
+}
+
+.status-icon-visual {
+  display: flex;
+  align-items: center;
+}
+
+.status-description {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.status-description p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.node-location {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1rem;
+}
+
+.location-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.location-text strong {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.location-text span {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.node-capacity {
+  margin-bottom: 1rem;
+}
+
+.capacity-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.capacity-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.capacity-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.capacity-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.capacity-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: right;
+}
+
+.node-info-footer {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
+}
+
+.last-updated {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+/* Status specific styles */
+.node-card-enhanced.status-available {
+  border-left: 4px solid var(--success);
+}
+
+.node-card-enhanced.status-occupied {
+  border-left: 4px solid var(--warning);
+}
+
+.node-card-enhanced.status-maintenance {
+  border-left: 4px solid var(--error);
+}
+
+.status-available .status-indicator-visual {
+  background: var(--success-ultralight);
+  color: var(--success);
+}
+
+.status-occupied .status-indicator-visual {
+  background: var(--warning-ultralight);
+  color: var(--warning);
+}
+
+.status-maintenance .status-indicator-visual {
+  background: var(--error-ultralight);
+  color: var(--error);
+}
+
+.status-available .capacity-fill {
+  background: var(--success);
+}
+
+.status-occupied .capacity-fill {
+  background: var(--warning);
+}
+
+.status-maintenance .capacity-fill {
+  background: var(--error);
+}
+
+/* ===== TABLE STYLES ===== */
+.table-container-professional {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.nodes-table-professional {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nodes-table-professional th {
+  background: var(--background);
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nodes-table-professional td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+.nodes-table-professional tr:last-child td {
+  border-bottom: none;
+}
+
+.nodes-table-professional tr:hover {
+  background: var(--background);
+}
+
+.node-identity-table {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.node-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-ultralight);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.node-icon .material-icons {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.node-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.node-id {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.node-meta {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.node-location {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Status Badges */
+.status-badge-table {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-badge-table.available {
+  background: var(--success-ultralight);
+  color: var(--success);
+}
+
+.status-badge-table.occupied {
+  background: var(--warning-ultralight);
+  color: var(--warning);
+}
+
+.status-badge-table.maintenance {
+  background: var(--error-ultralight);
+  color: var(--error);
+}
+
+.status-badge-table .material-icons {
+  font-size: 1rem;
+}
+
+/* Node Type Badges */
+.node-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.node-type-badge.dustbin {
+  background: var(--info-ultralight);
+  color: var(--info);
+}
+
+.node-type-badge.locker {
+  background: var(--secondary-ultralight);
+  color: var(--secondary);
+}
+
+/* Table Actions */
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-input-table,
+.edit-select-table {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.edit-input-table:focus,
+.edit-select-table:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-ultralight);
+}
+
+/* ===== ENHANCED NODE MANAGEMENT COUNT STYLES ===== */
+.management-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.management-stat-card {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.management-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.management-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color, var(--primary));
+}
+
+.management-stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.management-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--icon-bg, var(--primary-ultralight));
+}
+
+.management-stat-icon .material-icons {
+  font-size: 1.5rem;
+  color: var(--icon-color, var(--primary));
+}
+
+.management-stat-trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  background: var(--success-ultralight);
+  color: var(--success);
+}
+
+.management-stat-content {
+  text-align: center;
+}
+
+.management-stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.management-stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.management-stat-description {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: 0.5rem;
+}
+
+/* Specific stat card colors */
+.management-stat-card.total {
+  --card-color: var(--primary);
+  --icon-bg: var(--primary-ultralight);
+  --icon-color: var(--primary);
+}
+
+.management-stat-card.available {
+  --card-color: var(--success);
+  --icon-bg: var(--success-ultralight);
+  --icon-color: var(--success);
+}
+
+.management-stat-card.occupied {
+  --card-color: var(--warning);
+  --icon-bg: var(--warning-ultralight);
+  --icon-color: var(--warning);
+}
+
+.management-stat-card.maintenance {
+  --card-color: var(--error);
+  --icon-bg: var(--error-ultralight);
+  --icon-color: var(--error);
+}
+
+.management-stat-card.dustbins {
+  --card-color: var(--info);
+  --icon-bg: var(--info-ultralight);
+  --icon-color: var(--info);
+}
+
+.management-stat-card.lockers {
+  --card-color: var(--secondary);
+  --icon-bg: var(--secondary-ultralight);
+  --icon-color: var(--secondary);
+}
+
+/* Real-time update indicator */
+.real-time-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--success);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: pulse 2s infinite;
+}
+
+.real-time-indicator .material-icons {
+  font-size: 0.875rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Enhanced stats summary */
+.stats-summary-enhanced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  margin-bottom: 2rem;
+}
+
+.stats-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stats-summary-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stats-summary-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.stats-summary-badge {
+  background: var(--primary-ultralight);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Quick stats in node management */
+.node-management-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.quick-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+}
+
+.quick-stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.quick-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quick-stat-icon .material-icons {
+  font-size: 1.25rem;
+}
+
+.quick-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.quick-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.quick-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Color variants for quick stats */
+.quick-stat-item.total .quick-stat-icon {
+  background: var(--primary-ultralight);
+}
+
+.quick-stat-item.total .quick-stat-icon .material-icons {
+  color: var(--primary);
+}
+
+.quick-stat-item.available .quick-stat-icon {
+  background: var(--success-ultralight);
+}
+
+.quick-stat-item.available .quick-stat-icon .material-icons {
+  color: var(--success);
+}
+
+.quick-stat-item.occupied .quick-stat-icon {
+  background: var(--warning-ultralight);
+}
+
+.quick-stat-item.occupied .quick-stat-icon .material-icons {
+  color: var(--warning);
+}
+
+.quick-stat-item.maintenance .quick-stat-icon {
+  background: var(--error-ultralight);
+}
+
+.quick-stat-item.maintenance .quick-stat-icon .material-icons {
+  color: var(--error);
+}

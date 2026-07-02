@@ -1,0 +1,56 @@
+/* DustbinsSection.css */
+/* Styles for DustbinsSection component */
+
+.dustbins-section-enhanced {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Status specific styles for dustbins */
+.dustbin-card.available {
+  border-left: 4px solid var(--success);
+}
+
+.dustbin-card.occupied {
+  border-left: 4px solid var(--warning);
+}
+
+.dustbin-card.maintenance {
+  border-left: 4px solid var(--error);
+}
+
+/* Dustbin specific visual */
+.dustbin-visual {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.quick-details-panel {
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border-light);
+}
+
+.details-content h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+}
+
+.detail-item span:first-child {
+  color: var(--text-tertiary);
+}
+
+.detail-item span:last-child {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
