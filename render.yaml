@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: rfid-dashboard-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: DB_HOST
+        value: localhost
+      - key: DB_USER
+        value: Shrinath
+      - key: DB_PASSWORD
+        value: Tonystark_7777
+      - key: DB_NAME
+        value: rfid-project
+      - key: DB_PORT
+        value: "3306"
+      - key: JWT_SECRET
+        value: 3129c1052a2418a4c180800fa6f4f4ba549bb81fc2a9e0b57971dd77837a32269af1d39d4f77941e731539fb06b885411c6474c835b210621beca81a70abb9d7
