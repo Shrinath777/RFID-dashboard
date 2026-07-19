@@ -27,9 +27,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('sessionId');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+      console.log('Bypassing 401 redirect for showcase mode');
     }
     return Promise.reject(error);
   }

@@ -30,55 +30,9 @@ function App() {
   }, []);
 
   const checkAuthentication = async () => {
-    try {
-      console.log('🔍 Checking authentication status...');
-      
-      const authToken = localStorage.getItem('authToken');
-      const savedUser = localStorage.getItem('user');
-      
-      console.log('📦 Stored auth data:', { authToken, savedUser });
-
-      if (savedUser && authToken) {
-        // If we have both user data and token, verify with backend
-        try {
-          console.log('🔑 Token found, verifying with backend...');
-          const authStatus = await checkAuth();
-          console.log('🔐 Backend auth response:', authStatus);
-          
-          if (authStatus.authenticated && authStatus.user) {
-            setUser(authStatus.user);
-            // Update stored user data
-            localStorage.setItem('user', JSON.stringify(authStatus.user));
-            console.log('✅ Backend authentication successful');
-          } else {
-            console.log('❌ Backend authentication failed');
-            clearAuthData();
-          }
-        } catch (authError) {
-          console.error('💥 Auth check failed:', authError);
-          // If we have saved user but backend check failed, use saved user as fallback
-          if (savedUser) {
-            console.log('🔄 Using saved user data as fallback');
-            setUser(JSON.parse(savedUser));
-          } else {
-            clearAuthData();
-          }
-        }
-      } else if (savedUser) {
-        // If we have user data but no token, use it (for backward compatibility)
-        console.log('🔄 Using saved user data without token');
-        setUser(JSON.parse(savedUser));
-      } else {
-        console.log('❌ No authentication data found');
-        clearAuthData();
-      }
-    } catch (error) {
-      console.error('💥 Authentication check error:', error);
-      clearAuthData();
-    } finally {
-      setLoading(false);
-      console.log('🏁 Authentication check completed');
-    }
+    console.log('🏁 Bypass authentication for showcase purposes');
+    setUser({ name: 'Guest', role: 'Viewer' });
+    setLoading(false);
   };
 
   const clearAuthData = () => {
