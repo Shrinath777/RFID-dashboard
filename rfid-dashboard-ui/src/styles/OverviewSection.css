@@ -17,91 +17,7 @@
   }
 }
 
-/* Stats Card Styles */
-.stats-card-enhanced {
-  background: var(--surface);
-  padding: 2rem;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.stats-card-enhanced:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.stats-card-enhanced::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--card-color, var(--primary));
-}
-
-.stats-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.stats-icon-container {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stats-icon {
-  font-size: 1.5rem;
-}
-
-.stats-trend {
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  background: var(--success-ultralight);
-  color: var(--success);
-}
-
-.stats-content h3 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-}
-
-.stats-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.stats-description {
-  font-size: 0.875rem;
-  color: var(--text-tertiary);
-}
-
-.stats-card-decoration {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 80px;
-  height: 80px;
-  opacity: 0.1;
-  background: var(--card-color, var(--primary));
-  border-radius: 50%;
-}
+/* Stats Card Styles are now entirely managed in StatsCard.css */
 
 /* Welcome Header */
 .section-header-main {
@@ -110,30 +26,44 @@
   align-items: flex-start;
   margin-bottom: 2.5rem;
   padding: 2rem;
-  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
-  border-radius: var(--radius-xl);
+  background: rgba(20, 25, 35, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-2xl);
   border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header-main::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.1), transparent 50%);
+  pointer-events: none;
 }
 
 .welcome-content h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .welcome-title {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .welcome-subtitle {
@@ -260,17 +190,19 @@
 
 /* Activity Feed Card */
 .activity-feed-card {
-  background: var(--surface);
-  border-radius: var(--radius-xl);
+  background: rgba(20, 25, 35, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-2xl);
   padding: 2rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   height: fit-content;
 }
 
 .activity-feed-card h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
   display: flex;
